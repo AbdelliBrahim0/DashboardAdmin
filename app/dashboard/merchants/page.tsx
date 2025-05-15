@@ -375,11 +375,11 @@ export default function MerchantsPage() {
 
   const filteredMerchants = merchants.filter(
     (merchant) =>
-      merchant.businessName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      merchant.ownerFirstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      merchant.ownerLastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      merchant.ownerEmail.toLowerCase().includes(searchTerm.toLowerCase()),
-  )
+      (merchant.businessName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      merchant.ownerFirstName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      merchant.ownerLastName?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      merchant.ownerEmail?.toLowerCase().includes(searchTerm.toLowerCase()))
+  );
 
   const refreshMerchants = async () => {
     try {
